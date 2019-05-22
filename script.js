@@ -13,6 +13,8 @@ let app = new Vue({
     addedName: '',
     addedComment: '',
     comments: {},
+    ratings: {},
+    average: '',
   },
   //changed from created to mounted
   mounted() {
@@ -84,10 +86,22 @@ let app = new Vue({
       this.addedName = '';
       this.addedComment = '';
     },
+
     setRating(rating)
     {
-      // Handle the rating
+      if (!(this.number in this.ratings))
+        Vue.set(this.ratings, this.number, {
+        sum: 0,
+        total: 0,
+        average: ''
+        });
+      this.ratings[this.number].sum += rating;
+      this.ratings[this.number].total += 1;
+      this.ratings[this.number].average = this.ratings[this.number].sum / this.ratings[this.number].total;
+      this.average = this.ratings[this.number].average.toFixed(2);
+
     },
+
   },
   computed: {
     month() 
