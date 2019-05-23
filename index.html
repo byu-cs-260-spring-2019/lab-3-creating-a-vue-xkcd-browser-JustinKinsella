@@ -30,7 +30,7 @@
       <p>{{current.alt}}</p>
       <p><i>#{{current.num}}, drawn on {{current.day}} {{month}} {{current.year}}</i></p>   
 
-      <star-rating @rating-selected ="setRating" :increment="0.5" active-color="#ff0000"></star-rating> 
+      <star-rating @rating-selected ="setRating" :increment="0.5" active-color="#ff0000" :show-rating="null"></star-rating> 
       <div>
         <p><i>Average Rating: </i> {{average}}</p></p>   
       </div>
