@@ -30,7 +30,7 @@
       <p>{{current.alt}}</p>
       <p><i>#{{current.num}}, drawn on {{current.day}} {{month}} {{current.year}}</i></p>   
 
-      <star-rating @rating-selected ="setRating"></star-rating> 
+      <star-rating @rating-selected ="setRating" :increment="0.5" active-color="#ff0000"></star-rating> 
       <div>
         <p><i>Average Rating: </i> {{average}}</p></p>   
       </div>
@@ -51,7 +51,9 @@
       </div>
     </div>
   </div>
-
+  <div id="footer">
+    source code by Justin Kinsella found at : <a href="https://github.com/byu-cs-260-spring-2019/lab-3-creating-a-vue-xkcd-browser-JustinKinsella">github</a> 
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src= "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
